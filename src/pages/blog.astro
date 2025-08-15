@@ -1,4 +1,5 @@
 ---
+import Navigation from "../components/Navigation.astro"
 import "../styles/global.css"
 
 const baseUrl = import.meta.env.BASE_URL
@@ -14,9 +15,7 @@ const baseUrl = import.meta.env.BASE_URL
 		<title>Astro</title>
 	</head>
 	<body>
-        <a href={`${baseUrl}/`}>Home</a>
-        <a href={`${baseUrl}/about`}>About</a>
-		<a href={`${baseUrl}/blog`}>Blog</a>
+        <Navigation />
 
         <h1>My Astro Site</h1>
         <h1>My Astro Learning Blog</h1>
