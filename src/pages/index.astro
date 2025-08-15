@@ -1,10 +1,9 @@
 ---
 import Navigation from "../components/Navigation.astro"
+import Footer from '../components/Footer.astro';
 import "../styles/global.css"
 
 const pageTitle = "Home page"
-
-const baseUrl = import.meta.env.BASE_URL
 ---
 
 <html lang="en">
@@ -19,5 +18,7 @@ const baseUrl = import.meta.env.BASE_URL
 		<Navigation />
 
 		<h1>{pageTitle}</h1>
+
+		<Footer />
 	</body>
 </html>
