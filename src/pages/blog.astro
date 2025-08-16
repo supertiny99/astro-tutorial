@@ -1,14 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const baseUrl = import.meta.env.BASE_URL
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+
 
 ---
 
 <BaseLayout pageTitle="Blog">
     <p>This is where I will post about my journey learning Astro.</p>
     <ul>
-        <li><a href={`${baseUrl}/posts/post-1`}>Post 1</a></li>
-        <li><a href={`${baseUrl}/posts/post-2`}>Post 2</a></li>
-        <li><a href={`${baseUrl}/posts/post-3`}>Post 3</a></li>
+        {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}></BlogPost>)}
     </ul>
 </BaseLayout>
